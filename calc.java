@@ -27,6 +27,10 @@ public class calc {
                 num2 = input.nextDouble();
 
                 switch (operator) {
+                    case '%':
+                        result = num1 % num2;
+                        System.out.printf("Result: %.2f\n", result);
+                        break;
                     case '+':
                         result = num1 + num2;
                         System.out.printf("Result: %.2f\n", result);
