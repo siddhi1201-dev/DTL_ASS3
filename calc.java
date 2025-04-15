@@ -48,6 +48,11 @@ public class Calculator {
                         break;
                 }
                 break;
+	case '+':
+                        result = num1 + num2;
+                        System.out.printf("Result: %.2f\n", result);
+                        break;
+
 
             case 'h':
                 System.out.print("Enter an integer to convert to hexadecimal: ");
