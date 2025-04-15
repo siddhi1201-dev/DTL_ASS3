@@ -1,42 +1,55 @@
 #include <stdio.h>
-
+#include <math.h>
 // Decimal calculator function
 void decimalCalculator() {
     char operator;
     float num1, num2, result;
 
-    printf("Enter an operator (+, -, *, /): ");
+    printf("Enter an operator (+, -, *, /, s for sin, c for cos): ");
     scanf(" %c", &operator);
 
-    printf("Enter two numbers: ");
-    scanf("%f %f", &num1, &num2);
+    if (operator == 's' || operator == 'c') {
+        printf("Enter one number (in degrees): ");
+        scanf("%f", &num1);
+        float radians = num1 * M_PI / 180.0; // convert degrees to radians
 
-    switch (operator) {
-        case '+':
-            result = num1 + num2;
-            printf("Result: %.2f\n", result);
-            break;
-        case '-':
-            result = num1 - num2;
-            printf("Result: %.2f\n", result);
-            break;
-        case '*':
-            result = num1 * num2;
-            printf("Result: %.2f\n", result);
-            break;
-        case '/':
-            if (num2 != 0) {
-                result = num1 / num2;
+        if (operator == 's') {
+            result = sin(radians);
+            printf("Result (sin): %.4f\n", result);
+        } else {
+            result = cos(radians);
+            printf("Result (cos): %.4f\n", result);
+        }
+    } else {
+        printf("Enter two numbers: ");
+        scanf("%f %f", &num1, &num2);
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
                 printf("Result: %.2f\n", result);
-            } else {
-                printf("Error: Division by zero is not allowed.\n");
-            }
-            break;
-        default:
-            printf("Invalid operator.\n");
+                break;
+            case '-':
+                result = num1 - num2;
+                printf("Result: %.2f\n", result);
+                break;
+            case '*':
+                result = num1 * num2;
+                printf("Result: %.2f\n", result);
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    printf("Result: %.2f\n", result);
+                } else {
+                    printf("Error: Division by zero is not allowed.\n");
+                }
+                break;
+            default:
+                printf("Invalid operator.\n");
+        }
     }
 }
-
 // Hexadecimal calculator function
 void hexCalculator() {
     char operator;
