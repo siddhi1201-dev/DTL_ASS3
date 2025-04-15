@@ -31,6 +31,10 @@ public class calc {
                         result = num1 + num2;
                         System.out.printf("Result: %.2f\n", result);
                         break;
+                    case '^':
+                        result = Math.pow(num1,num2);
+                        System.out.printf("Result: %.2f\n", result);
+                        break;
                     case '-':
                         result = num1 - num2;
                         System.out.printf("Result: %.2f\n", result);
