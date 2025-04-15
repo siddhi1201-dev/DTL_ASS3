@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Calculator {
+public class calc {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         char operator;
@@ -12,6 +12,7 @@ public class Calculator {
         System.out.println(" *  Multiplication");
         System.out.println(" /  Division");
         System.out.println(" h  Convert number to Hexadecimal");
+        System.out.println(" b  Convert number to Binary");
 
         System.out.print("Enter operator: ");
         operator = input.next().charAt(0);
@@ -51,9 +52,16 @@ public class Calculator {
 
             case 'h':
                 System.out.print("Enter an integer to convert to hexadecimal: ");
-                int number = input.nextInt();
-                String hex = Integer.toHexString(number);
+                int hexNumber = input.nextInt();
+                String hex = Integer.toHexString(hexNumber);
                 System.out.println("Hexadecimal: " + hex.toUpperCase());
+                break;
+
+            case 'b':
+                System.out.print("Enter an integer to convert to binary: ");
+                int binNumber = input.nextInt();
+                String binary = Integer.toBinaryString(binNumber);
+                System.out.println("Binary: 0b" + binary);
                 break;
 
             default:
@@ -63,4 +71,3 @@ public class Calculator {
         input.close();
     }
 }
-
